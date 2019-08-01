@@ -1,3 +1,5 @@
+// Implement an algorithm to determine if a string has all unique characters.
+// what if you cannot use additional data structure?
 package main
 
 import "fmt"
@@ -7,7 +9,6 @@ import "fmt"
 // 	length := len(str)
 // 	if length > 128 { return false } // ascii limit
 // 	if length == 0 || length == 1 { return true }
-
 // 	check := make(map[rune]bool, length)
 // 	for _,char := range str {
 // 		if v, ok := check[char]; ok && v {

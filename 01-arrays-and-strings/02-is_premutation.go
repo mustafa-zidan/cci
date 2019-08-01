@@ -1,3 +1,5 @@
+// check premutation: Given two strings, write a method to decide if one is a
+// premutation of the other.
 package main
 
 import(

@@ -1,3 +1,12 @@
+// Palindrome Premutation: Given a string, write a function to check if it is a
+// premutation of a palindrome. A palindrome is a word of a phrase that is the
+// same forwards and backwards. A premutation is a rearrangement of the letters.
+// the palindrome does not need to be limited to just dictionary words.
+
+// Example:
+// Input: "Tact Coa"
+// Output: True (premutations: "taco cat", "atco cta", etc.)
+
 package main
 
 import(
