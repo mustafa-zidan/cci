@@ -1,47 +1,41 @@
 // Implement an algorithm to determine if a string has all unique characters.
 // what if you cannot use additional data structure?
-package main
+package arrays
 
-import "fmt"
-
-//
-// func isUnique(str string) bool {
-// 	length := len(str)
-// 	if length > 128 { return false } // ascii limit
-// 	if length == 0 || length == 1 { return true }
-// 	check := make(map[rune]bool, length)
-// 	for _,char := range str {
-// 		if v, ok := check[char]; ok && v {
-// 			return false
-// 		}
-// 		check[char] = true
-// 	}
-// 	return true
-// }
-
-// checker is acting like a map of bits starts with
-// 00000...000 then when it is anded with anything it
-// result zero and then we push one in it's unique place
-// in the bit map so if there abcfgh will translate to
-// 111011100... when this value is anded with any value
-// that has a unique letter e.g,
-func isUnique(str string) bool {
-	if len(str) > 128 { return false } // ascii limit
-	var checker uint
+func isUniqueAlternativeImplementation(str string) bool {
+	length := 128
+	if len(str) > length {
+		return false
+	} // ascii limit
+	check := make([]bool, length)
 	for _, char := range str {
-		c := uint(char) - uint('a')
-		if checker & (1 << c ) > 0 {
+		c := uint(char)
+		if check[c] {
 			return false
 		}
-		checker |= 1 << c
+		check[c] = true
 	}
 	return true
 }
 
-
-func main() {
-	fmt.Println("isUnique(\"\"):\t", isUnique(""))
-	fmt.Println("isUnique(\"a\"):\t", isUnique("a"))
-	fmt.Println("isUnique(\"abcd\"):\t", isUnique("abcd"))
-	fmt.Println("isUnique(\"Hello\"):\t", isUnique("Hello"))
+// checker is acting like a map of bits starts with
+// 00000...000 then when it is anded with anything it
+// result zero and then we push one in it's unique place
+// in the bit map so if there "abcfgh" will translate to
+// 111011100... when this value is anded with any value
+// that has a unique letter e.g, "d" it results 0 which
+// means this number is unique
+func isUnique(str string) bool {
+	if len(str) > 128 {
+		return false
+	} // ascii limit
+	var hash uint
+	for _, char := range str {
+		c := uint(char) - uint('a')
+		if hash&(1<<c) > 0 {
+			return false
+		}
+		hash |= 1 << c
+	}
+	return true
 }
