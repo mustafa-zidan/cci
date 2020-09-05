@@ -19,10 +19,17 @@ func TestPalindromePermutation(t *testing.T) {
 
 func (suite *PalindromePermutationTestingSuite) TestPalindromePermutation() {
 	assert.True(suite.T(), palindromePermutation("Tact aCo"))
+	assert.True(suite.T(), palindromePermutation("Tact aCo!"))
+	assert.True(suite.T(), palindromePermutation("atco cta"))
+	assert.True(suite.T(), palindromePermutation("ZYX ZYX!?@"))
 }
 
 func (suite *PalindromePermutationTestingSuite) TestPalindromePermutationAlternativeImplementation() {
 	assert.True(suite.T(), palindromePermutationAlternativeImplementation("Tact aCo"))
+	assert.True(suite.T(), palindromePermutationAlternativeImplementation("Tact aCo"))
+	assert.True(suite.T(), palindromePermutationAlternativeImplementation("Tact aCo!"))
+	assert.True(suite.T(), palindromePermutationAlternativeImplementation("atco cta"))
+	assert.True(suite.T(), palindromePermutationAlternativeImplementation("ZYX ZYX!?@"))
 }
 
 func BenchmarkPalindromePermutation(b *testing.B) {

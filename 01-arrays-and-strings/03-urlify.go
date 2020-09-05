@@ -1,3 +1,5 @@
+package arrays
+
 // URLify: write a method to replace all spaces in a string with '%20'.
 // You may assume that the string has sufficent space at the end to hold
 // the additional charachtersm, and that you are given the true length
@@ -6,7 +8,6 @@
 // Example
 // Input "Mr John Smith    ", 13
 // Output "Mr%20John%20Smith"
-package arrays
 
 func urlifyAlternativeImplementation(s string, trueLength int) string {
 	count := 0

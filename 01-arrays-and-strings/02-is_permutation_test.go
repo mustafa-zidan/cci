@@ -18,8 +18,11 @@ func TestIsPermutation(t *testing.T) {
 }
 
 func (suite *IsPermutationTestingSuite) TestIsPermutation() {
-	assert.False(suite.T(), isPermutation("hello", "hello my friend"))
+	assert.False(suite.T(), isPermutation("hello", "hella"))
 	assert.True(suite.T(), isPermutation("elloh", "hello"))
+	assert.True(suite.T(), isPermutation("Water", "terwa"))
+	assert.True(suite.T(), isPermutation("world", "World"))
+	assert.True(suite.T(), isPermutation("world", "dlrow"))
 }
 
 func (suite *IsPermutationTestingSuite) TestIsPermutationAlternativeImplementation() {

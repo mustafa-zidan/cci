@@ -1,5 +1,7 @@
 package hard
 
+// this approach breaks if there is a carry between multiple
+// bits
 func addWithoutPlusFaulty(x, y int) int {
 	sum, carry, i := 0, 0, 0
 	for x != 0 || y != 0 {

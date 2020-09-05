@@ -1,9 +1,11 @@
+package arrays
+
 // check permutation: Given two strings, write a method to decide if one is a
 // permutation of the other.
-package arrays
 
 import (
 	"sort"
+	"unicode"
 )
 
 type SortedRunes []rune
@@ -26,7 +28,10 @@ func Sort(s string) string {
 	return string(r)
 }
 
-// sort and compare
+// sort both strings then compare and compare
+// Space Complexity O(1), Runtime Complexity O(n log(n))
+// this approach is faulty since it will mismatch if the cases are
+// different
 func isPermutationAlternativeImplementation(src, target string) bool {
 	if len(src) != len(target) {
 		return false
@@ -34,21 +39,19 @@ func isPermutationAlternativeImplementation(src, target string) bool {
 	return Sort(src) == Sort(target)
 }
 
-// Counter
+// Create an array that will hold the characters and the count of which
+// each rune appears in both strings
+// Space Complexity O(128), Runtime Complexity O(n)
 func isPermutation(src, target string) bool {
 	if len(src) != len(target) {
 		return false
 	}
+	s, t := []rune(src), []rune(target)
 	m := make([]rune, 128)
-	for _, c := range src {
-		m[c]++
-	}
 
-	for _, c := range target {
-		if m[c] == 0 {
-			return false
-		}
-		m[c]--
+	for i := 0; i < len(s); i++ {
+		m[unicode.ToLower(s[i])]++
+		m[unicode.ToLower(t[i])]--
 	}
 	for _, count := range m {
 		if count != 0 {
