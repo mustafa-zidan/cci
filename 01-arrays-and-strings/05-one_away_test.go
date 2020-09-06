@@ -20,8 +20,10 @@ func TestOneAway(t *testing.T) {
 func (suite *OneAwayTestingSuite) TestOneAway() {
 	assert.True(suite.T(), oneAway("pale", "ple"))
 	assert.True(suite.T(), oneAway("pale", "pales"))
+	assert.True(suite.T(), oneAway("pales", "pale"))
 	assert.True(suite.T(), oneAway("pale", "bale"))
 	assert.False(suite.T(), oneAway("pale", "bake"))
+	assert.False(suite.T(), oneAway("pale", "ba"))
 }
 
 func BenchmarkOneAway(b *testing.B) {
