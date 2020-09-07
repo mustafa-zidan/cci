@@ -16,14 +16,14 @@ Crack the coding interview problems solved in go.
 
 ## Chapter 2: Linked Lists
 
--   [Remove Dubs](02-linked_lists/01-remove_dups.go)
--   [Return Kth to Last](02-linked_lists/02-return_kth_to_last.go)
--   [Delete Middle Node](02-linked_lists/03-delete_middle_node.go)
--   [Partition](02-linked_lists/04-partition.go)
--   [Sum Lists](02-linked_lists/05-sum_lists.go)
--   [Palindrome](02-linked_lists/06-palindrome.go)
--   [Intersection](02-linked_lists/07-intersection.go)
--   [Loop Detection](02-linked_lists/08-loop_detection.go)
+-   [Remove Dubs](02-linked-lists/01-remove_dups.go)
+-   [Return Kth to Last](02-linked-lists/02-return_kth_to_last.go)
+-   [Delete Middle Node](02-linked-lists/03-delete_middle_node.go)
+-   [Partition](02-linked-lists/04-partition.go)
+-   [Sum Lists](02-linked-lists/05-sum_lists.go)
+-   [Palindrome](02-linked-lists/06-palindrome.go)
+-   [Intersection](02-linked-lists/07-intersection.go)
+-   [Loop Detection](02-linked-lists/08-loop_detection.go)
 
 ## Chapter 17: Hard
 
