@@ -19,7 +19,7 @@ func TestStringCompression(t *testing.T) {
 
 func (suite *StringCompressionTestingSuite) TestStringCompression() {
 	assert.Equal(suite.T(), "a2b1c5a3", compress("aabcccccaaa"))
-
+	assert.Equal(suite.T(), "abcdeff", compress("abcdeff"))
 }
 
 func BenchmarkStringCompression(b *testing.B) {

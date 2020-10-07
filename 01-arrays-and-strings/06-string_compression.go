@@ -4,8 +4,30 @@ package arrays
 // repeated characters for example, the string aabcccccaaa would become a2b1c5a3.
 // If the "compressed" string would not become smaller than the original string,
 // your method should return the original string. You can assume the string has
-// only uper case and lower case letters (a-z).
+// only upper case and lower case letters (a-z).
+
+import (
+	"strconv"
+	"strings"
+)
 
 func compress(s string) string {
-	return s
+	var compressed strings.Builder
+	runies := []rune(s)
+	start, end := 0, 0
+	for end < len(s) {
+		if runies[start] == runies[end] {
+			end++
+		} else {
+			compressed.WriteRune(runies[start])
+			compressed.WriteString(strconv.Itoa(end - start))
+			start = end
+		}
+		if compressed.Len() > len(s) {
+			return s
+		}
+	}
+	compressed.WriteRune(runies[start])
+	compressed.WriteString(strconv.Itoa(end - start))
+	return compressed.String()
 }
