@@ -4,5 +4,18 @@ package arrays
 //bytes, write a method to rotate the image by 90 degree. can you do it in place?
 
 func rotateMatrix(matrix [][]int) [][]int {
-	return matrix
+	n := len(matrix) - 1
+	// create NxN result
+	result := make([][]int, n+1)
+
+	for i, _ := range result {
+		result[i] = make([]int, n+1)
+	}
+
+	for i, row := range matrix {
+		for j, pixel := range row {
+			result[j][n-i] = pixel
+		}
+	}
+	return result
 }

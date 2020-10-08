@@ -17,7 +17,7 @@ func TestStringRotation(t *testing.T) {
 	suite.Run(t, new(StringRotationTestingSuite))
 }
 
-func (suite *StringCompressionTestingSuite) TestStringRotation() {
+func (suite *StringRotationTestingSuite) TestStringRotation() {
 	assert.True(suite.T(), stringRotation("waterbottle", "etbottlewat"))
 
 }
