@@ -5,6 +5,6 @@ package linkedlists
 // of a singly linked list, given only access to that node.
 //
 // EXAMPLE Input:
-// 		the node c from the linked list a ->b->c ->d - >e->f
+//		the node c from the linked list a->b->c->d->e->f
 // Result:
-// 		nothing is returned, but the new linked list looks like a ->b->d - >e->f
+// 		nothing is returned, but the new linked list looks like a->b->d->e->f

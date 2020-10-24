@@ -25,6 +25,31 @@ Crack the coding interview problems solved in go.
 -   [Intersection](02-linked-lists/07-intersection.go)
 -   [Loop Detection](02-linked-lists/08-loop_detection.go)
 
+## Chapter 3: Stacks and Queues
+
+- [Three in One](03-stacks-and-queues/01-three_in_one.go)
+- [Stack Min](03-stacks-and-queues/02-stack_min.go)
+- [Stack of Plates](03-stacks-and-queues/03-stack_of_plates.go)
+- [Queue bia Stacks](03-stacks-and-queues/04-queue_via_stack.go)
+- [Sort Stack](03-stacks-and-queues/05-sort_stack.go)
+- [Animal Shelter](03-stacks-and-queues/06-animal_shelter.go)
+
+
+## Chapter 4: Trees and Graphs
+
+- [Route Between Nodes](04-trees-and-graphs/01-route_between_nodes.go)
+- [Minimal Tree](04-trees-and-graphs/02-minimal_tree.go)
+- [List of Depths](04-trees-and-graphs/03-list_of_depths.go)
+- [Check Balanced](04-trees-and-graphs/04-check_balanced.go)
+- [Validate BST](04-trees-and-graphs/05-validate_bst.go)
+- [Seccessor](04-trees-and-graphs/06-seccessor.go)
+- [Build Order](04-trees-and-graphs/07-build_order.go)
+- [First Commpn Ancestor](04-trees-and-graphs/08-first_common_ancestor.go)
+- [BST Sequences](04-trees-and-graphs/09-bst_sequences.go)
+- [Check Subtree](04-trees-and-graphs/10-check_subtree.go)
+- [Random Node](04-trees-and-graphs/11-random_node.go)
+- [Paths with Sum](04-trees-and-graphs/12-paths_with_sum.go)
+
 ## Chapter 17: Hard
 
 -   [Add Without Plus](17-hard/01-add_without_plus.go)
