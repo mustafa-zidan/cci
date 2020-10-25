@@ -63,6 +63,17 @@ Crack the coding interview problems solved in go.
 
 ## Chapter 06: Math and Logic Puzzles
 
+- [The Heavy Pill](06-math-and_logic_puzzles/01-the_heavy_pill.go)
+- [Basketball](06-math-and_logic_puzzles/02-basketball.go)
+- [Dominos](06-math-and_logic_puzzles/03-dominos.go)
+- [Ants on a Triangle](06-math-and_logic_puzzles/04-ants_on_a_triangle.go)
+- [Jugs of Water](06-math-and_logic_puzzles/05-jugs_of_water.go)
+- [Blue-Eyed Island](06-math-and_logic_puzzles/06-blue_eyed_island.go)
+- [The Apocalypse](06-math-and_logic_puzzles/07-the_apocalypse.go)
+- [The Egg Drop Problem](06-math-and_logic_puzzles/08-the_egg_drop_problem.go)
+- [100 Lockers](06-math-and_logic_puzzles/09-100_lockers.go)
+- [Poison](06-math-and_logic_puzzles/10-poison.go)
+
 ## Chapter 07: Object Oriented Design
 
 ## Chapter 08: Recursion and Dynamic Programming
@@ -128,7 +139,7 @@ Crack the coding interview problems solved in go.
 - [Majority Element](17-hard/10-majority_element.go)
 - [Word Distance](17-hard/11-word_distance.go)
 - [BiNode](17-hard/12-binode.go)
-- [Re-Space](17-hard/13-Re_Space.go)
+- [Re-Space](17-hard/13-re_space.go)
 - [Smallest K](17-hard/14-smallest_k.go)
 - [Longest Word](17-hard/15-longest_word.go)
 - [The Masseuse](17-hard/16-the_masseuse.go)
