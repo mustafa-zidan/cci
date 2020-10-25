@@ -1,5 +1,8 @@
 package hard
 
+// Write a function that adds two numbers. You should not use + or any
+// arithmetic operators.
+
 // this approach breaks if there is a carry between multiple
 // bits
 func addWithoutPlusFaulty(x, y int) int {
