@@ -6,5 +6,26 @@ package arrays
 //a rotation of "erbottlewat")
 
 func stringRotation(first, second string) bool {
-	return false
+	// no need to run the matcher
+	if len(first) != len(second) {
+		return false
+	}
+	// means no rotation in the two strings
+	if first == second {
+		return true
+	}
+	firstRunes, secondRunes := []rune(first), []rune(second)
+	i, j := 0, 0
+
+	for i < len(first) && j < len(second) {
+		if firstRunes[i] == secondRunes[j] {
+			i++
+			j++
+		} else {
+			j++
+		}
+	}
+
+	rotated := first[i:] + first[:i]
+	return rotated == second
 }

@@ -3,7 +3,10 @@ package arrays
 // Write an algorithm such that if an element in an MxN matrix is 0,
 // it's entire row and column are set to 0
 
-// Here I use DFS
+// The idea here is to create two arrays of boolean one for each position
+// in a row each for the each position in a column although this is not
+// either time or space efficient
+// time complexity O(M*N) space complexity O(M+N)
 func zeroMatrix(matrix [][]int) [][]int {
 	if len(matrix) == 0 {
 		return matrix
@@ -38,3 +41,6 @@ func zeroMatrix(matrix [][]int) [][]int {
 
 	return matrix
 }
+
+// TODO use two integers that map these rows and columns to bits to get the space
+// comlexity to 1

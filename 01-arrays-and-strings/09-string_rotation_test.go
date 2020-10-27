@@ -18,8 +18,11 @@ func TestStringRotation(t *testing.T) {
 }
 
 func (suite *StringRotationTestingSuite) TestStringRotation() {
-	assert.True(suite.T(), stringRotation("waterbottle", "etbottlewat"))
-
+	assert.False(suite.T(), stringRotation("waterbottle", "etbottlewat"))
+	assert.True(suite.T(), stringRotation("waterbottle", "erbottlewat"))
+	assert.True(suite.T(), stringRotation("erbottlewat", "waterbottle"))
+	assert.True(suite.T(), stringRotation("waterbottle", "waterbottle"))
+	assert.True(suite.T(), stringRotation("abce", "ceab"))
 }
 
 func BenchmarkStringRotation(b *testing.B) {
