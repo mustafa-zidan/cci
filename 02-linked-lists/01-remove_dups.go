@@ -8,7 +8,7 @@ package linkedlists
 // then remove it from the list
 func removeDups(l *LinkedList) *LinkedList {
 	hash := make([]bool, 128)
-	root, previous := l, l
+	var root, previous *LinkedList = l, nil
 	for l != nil {
 		if hash[l.Val.(rune)-'a'] {
 			previous.Next = l.Next
@@ -24,7 +24,7 @@ func removeDups(l *LinkedList) *LinkedList {
 // create a bit map where each character is presented by one bit
 func removeDupsAlternativeSolution(l *LinkedList) *LinkedList {
 	hash := uint64(0)
-	root, previous := l, l
+	var root, previous *LinkedList = l, nil
 	for l != nil {
 		// character position in the bit map
 		c := uint64(1) << uint(l.Val.(rune)-'a')
