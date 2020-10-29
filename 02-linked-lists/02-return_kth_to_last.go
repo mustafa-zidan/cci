@@ -19,7 +19,6 @@ package linkedlists
 // a better idea is to keep the Kth Node only in Memory.
 // and use kth.Next each time we pass the Kth element
 // This is O(1) space complixy and O(n) time complexity
-
 func returnKthToLast(l *LinkedList, k int) interface{} {
 	var kth *LinkedList = l
 	count := 0
@@ -31,5 +30,9 @@ func returnKthToLast(l *LinkedList, k int) interface{} {
 		count++
 	}
 
-	return kth.Val
+	if count < k {
+		return nil
+	} else {
+		return kth.Val
+	}
 }

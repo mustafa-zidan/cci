@@ -24,6 +24,18 @@ func (l *LinkedList) New(items []interface{}) *LinkedList {
 	return root
 }
 
+func (l *LinkedList) Get(index int) *LinkedList {
+	current := l
+	for i := 0; i < index; i++ {
+		if current == nil {
+			return nil
+		}
+		current = current.Next
+	}
+
+	return current
+}
+
 func (l *LinkedList) String() string {
 	var builder strings.Builder
 	current := l
@@ -72,6 +84,18 @@ func (l *DoubleLinkedList) New(items []interface{}) *DoubleLinkedList {
 	}
 
 	return root
+}
+
+func (l *DoubleLinkedList) Get(index int) *DoubleLinkedList {
+	current := l
+	for i := 0; i < index; i++ {
+		if current == nil {
+			return nil
+		}
+		current = current.Next
+	}
+
+	return current
 }
 
 func (l *DoubleLinkedList) String() string {
