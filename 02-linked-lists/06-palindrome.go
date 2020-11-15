@@ -1,6 +1,7 @@
 package linkedlists
 
 import (
+	"fmt"
 	"unicode"
 )
 
@@ -10,6 +11,7 @@ func palindrome(l *LinkedList) bool {
 	var alphabit uint64
 	for l != nil {
 		c := unicode.ToLower(l.Val.(rune))
+		fmt.Println(c)
 		if unicode.IsLetter(c) {
 			toggle(alphabit, c)
 		}
