@@ -9,6 +9,26 @@ package linkedlists
 // it does not need to appear between the left and right partitions.
 //
 // EXAMPLE Input:
-// 		3 -> 5 -> 8 -> 5 -> 10 -> 2 -> 1 [partition = 5)
+// 		3 -> 5 -> 8 -> 5 -> 10 -> 2 -> 1 [partition = 5]
 // Output:
-// 		3 -> 1 -> 2 -> 10 -> 5 -> 5 -> 8
+// 		3 -> 1 -> 2 -> 5 -> 8 -> 5 -> 10
+
+func partition(l *LinkedList, p int) {
+	left, right := &LinkedList{}, &LinkedList{}
+	rootL, rootR := left, right
+	for l != nil {
+		if l.Val.(int) >= p { // link item to the right partation
+			right.Next = l
+			right = right.Next
+		} else { // link item to the left partation
+			left.Next = l
+			left = left.Next
+		}
+		l = l.Next
+	}
+	// unlink the last item to avoid circular linked list
+	right.Next = nil
+	// link left and right partation
+	left.Next = rootR.Next
+	l = rootL.Next
+}

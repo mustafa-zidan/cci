@@ -16,3 +16,25 @@ package linkedlists
 //EXAMPLE Input:
 //	(6 -> 1 -> 7) + (2 -> 9 -> 5). That is, 617 + 295.
 //Output: 9 -> 1 -> 2. That is, 912.
+
+func sum(l, r *LinkedList) *LinkedList {
+	s := &LinkedList{}
+	current, carry := s, 0
+	for l != nil || r != nil {
+		val := 0
+		if l == nil && r != nil {
+			val = r.Val.(int) + carry
+			r = r.Next
+		} else if r == nil && l != nil {
+			val = (l.Val.(int) + carry)
+			l = l.Next
+		} else {
+			val = (l.Val.(int) + r.Val.(int) + carry) % 10
+			l, r = l.Next, r.Next
+		}
+		carry = val / 10
+		current.Next = &LinkedList{val % 10, nil}
+		current = current.Next
+	}
+	return s.Next
+}
