@@ -57,8 +57,7 @@ func palindromePermutation(s string) bool {
 		if !unicode.IsLetter(c) {
 			continue
 		}
-		c = unicode.ToLower(c)
-		toggle(alphabit, c)
+		alphabit = toggle(alphabit, unicode.ToLower(c))
 	}
 	return alphabit == 0 || hasExactlyOneBit(alphabit)
 }
@@ -67,11 +66,12 @@ func hasExactlyOneBit(n uint64) bool {
 	return (n&(n-1) == 0)
 }
 
-func toggle(n uint64, c rune) {
-	mask := uint64(1) << int(c)
-	if n&mask == 0 { // new char
-		n |= mask
+func toggle(n uint64, c rune) uint64 {
+	mask := uint64(1) << uint(c-'a')
+	if n&mask == 0 { // bit does not exists
+		n |= mask // turn the corresponding bit to 1
 	} else {
-		n ^= mask
+		n ^= mask // turn the corresponding bit to 0
 	}
+	return n
 }

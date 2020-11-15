@@ -36,13 +36,13 @@ func isUnique(str string) bool {
 	if len(str) > 128 {
 		return false
 	} // ascii limit
-	var hash uint // int is 64 and uint holds 128 bit depending on the cpu architecture
+	var hash uint64 // int is 64 and uint holds 128 bit depending on the cpu architecture
 	for _, char := range str {
-		c := uint(char) - uint('a')
-		if hash&(1<<c) > 0 {
+		c := uint64(1) << uint(char-'A')
+		if hash&(c) > 0 {
 			return false
 		}
-		hash |= 1 << c
+		hash |= c
 	}
 	return true
 }

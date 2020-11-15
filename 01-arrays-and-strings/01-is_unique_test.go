@@ -22,6 +22,7 @@ func (suite *IsUniqueTestingSuite) TestIsUnique() {
 	assert.True(suite.T(), isUnique("a"))
 	assert.True(suite.T(), isUnique("abcd"))
 	assert.False(suite.T(), isUnique("Hello"))
+	assert.False(suite.T(), isUnique("xyzz"))
 }
 
 func (suite *IsUniqueTestingSuite) TestIsUniqueAlternativeImplementation() {

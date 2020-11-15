@@ -29,7 +29,7 @@ func sum(l, r *LinkedList) *LinkedList {
 			val = (l.Val.(int) + carry)
 			l = l.Next
 		} else {
-			val = (l.Val.(int) + r.Val.(int) + carry) % 10
+			val = (l.Val.(int) + r.Val.(int) + carry)
 			l, r = l.Next, r.Next
 		}
 		carry = val / 10
