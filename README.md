@@ -2,7 +2,27 @@
 
 Crack the coding interview problems solved in go.
 
-## Chapter 01: Arrays and Strings
+## TOC
+- [Chapter 01: Arrays and Strings](#arraysandstrings)
+- [Chapter 02: Linked Lists](#linkedlists)
+- [Chapter 03: Stacks and Queues](#stacksandqueues)
+- [Chapter 04: Trees and Graphs](#treesandgraphs)
+- [Chapter 05: Bit Manipulation](#bitmanipulation)
+- [Chapter 06: Math and Logic Puzzles](#mathandlogic)
+- [Chapter 07: Object Oriented Design](#objectorianteddesign)
+- [Chapter 08: Recursion and Dynamic Programming](#recursionanddynamicprogramming)
+- [Chapter 09: System Design and Scalability](#systemdesignandscalability)
+- [Chapter 10: Sorting and Searching](#sortingandsearching)
+- [Chapter 11: Testing](#testing)
+- [Chapter 12: C and C++](#candcplusplus)
+- [Chapter 13: Java](#java)
+- [Chapter 14: Databases](#databases)
+- [Chapter 15: Threads and Locks](#threadsandlocks)
+- [Chapter 16: Moderate](#moderate)
+- [Chapter 17: Hard](#hard)
+
+
+## Chapter 01: Arrays and Strings [](#){name=arraysandstrings}
 
 -   [is Unique String](01-arrays-and-strings/01-is_unique.go)
 -   [Check Permutation](01-arrays-and-strings/02-is_permutatuion.go)
@@ -14,7 +34,7 @@ Crack the coding interview problems solved in go.
 -   [Zero Matrix](01-arrays-and-strings/08-zero_matrix.go)
 -   [String Rotation](01-arrays-and-strings/09-string_rotation.go)
 
-## Chapter 02: Linked Lists
+## Chapter 02: Linked Lists [](#){name=linkedlists}
 
 -   [Remove Dubs](02-linked-lists/01-remove_dups.go)
 -   [Return Kth to Last](02-linked-lists/02-return_kth_to_last.go)
@@ -25,7 +45,7 @@ Crack the coding interview problems solved in go.
 -   [Intersection](02-linked-lists/07-intersection.go)
 -   [Loop Detection](02-linked-lists/08-loop_detection.go)
 
-## Chapter 03: Stacks and Queues
+## Chapter 03: Stacks and Queues [](#){name=stacksandqueues}
 
 - [Three in One](03-stacks-and-queues/01-three_in_one.go)
 - [Stack Min](03-stacks-and-queues/02-stack_min.go)
@@ -35,7 +55,7 @@ Crack the coding interview problems solved in go.
 - [Animal Shelter](03-stacks-and-queues/06-animal_shelter.go)
 
 
-## Chapter 04: Trees and Graphs
+## Chapter 04: Trees and Graphs [](#){name=treesandgraphs}
 
 - [Route Between Nodes](04-trees-and-graphs/01-route_between_nodes.go)
 - [Minimal Tree](04-trees-and-graphs/02-minimal_tree.go)
@@ -50,7 +70,7 @@ Crack the coding interview problems solved in go.
 - [Random Node](04-trees-and-graphs/11-random_node.go)
 - [Paths with Sum](04-trees-and-graphs/12-paths_with_sum.go)
 
-## Chapter 05: Bit Manipulation
+## Chapter 05: Bit Manipulation [](#){name=bitmanipulation}
 
 - [Insertion](05-bit-manipulation/01-insertion.go)
 - [Binary to String](05-bit-manipulation/02-binary_to_string.go)
@@ -61,7 +81,7 @@ Crack the coding interview problems solved in go.
 - [Pairwise Swap](05-bit-manipulation/07-pairwise_swap.go)
 - [Draw Line](05-bit-manipulation/08-draw_line.go)
 
-## Chapter 06: Math and Logic Puzzles
+## Chapter 06: Math and Logic Puzzles [](#){name=mathandlogic}
 
 - [The Heavy Pill](06-math-and_logic_puzzles/01-the_heavy_pill.go)
 - [Basketball](06-math-and_logic_puzzles/02-basketball.go)
@@ -74,29 +94,29 @@ Crack the coding interview problems solved in go.
 - [100 Lockers](06-math-and_logic_puzzles/09-100_lockers.go)
 - [Poison](06-math-and_logic_puzzles/10-poison.go)
 
-## Chapter 07: Object Oriented Design
+## Chapter 07: Object Oriented Design [](#){name=objectorianteddesign}
 
-## Chapter 08: Recursion and Dynamic Programming
+## Chapter 08: Recursion and Dynamic Programming [](#){name=recursionanddynamicprogramming}
 
-## Chapter 09: System Design and Scalability
+## Chapter 09: System Design and Scalability [](#){name=systemdesignandscalability}
 
-## Chapter 10: Sorting and Searching
+## Chapter 10: Sorting and Searching [](#){name=sortingandsearching}
 
-## Chapter 11: Testing
+## Chapter 11: Testing [](#){name=testing}
 
-## Chapter 12: C and C++
-
-> Language specific and will not be implemented here
-
-## Chapter 13: Java
+## Chapter 12: C and C++ [](#){name=candcplusplus}
 
 > Language specific and will not be implemented here
 
-## Chapter 14: Databases
+## Chapter 13: Java [](#){name=java}
 
-## Chapter 15: Threads and Locks
+> Language specific and will not be implemented here
 
-## Chapter 16: Moderate
+## Chapter 14: Databases [](#){name=databases}
+
+## Chapter 15: Threads and Locks [](#){name=threadsandlocks}
+
+## Chapter 16: Moderate [](#){name=moderate}
 
 - [Number Swapper](16-moderate/01-number_swapper.go)
 - [Word Frequencies](16-moderate/02-word_frequencies.go)
@@ -125,7 +145,7 @@ Crack the coding interview problems solved in go.
 - [LRU Cache](16-moderate/25-lru_cache.go)
 - [Calculator](16-moderate/26-calculator.go)
 
-## Chapter 17: Hard
+## Chapter 17: Hard [](#){name=hard}
 
 - [Add Without Plus](17-hard/01-add_without_plus.go)
 - [Shuffle](17-hard/02-shuffle.go)
