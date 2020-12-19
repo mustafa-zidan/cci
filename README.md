@@ -43,7 +43,7 @@ Crack the coding interview problems solved in go.
 -   [Sum Lists](02-linked-lists/05-sum_lists.go) :white_check_mark:
 -   [Palindrome](02-linked-lists/06-palindrome.go) :negative_squared_cross_mark:
 -   [Intersection](02-linked-lists/07-intersection.go) :white_check_mark:
--   [Loop Detection](02-linked-lists/08-loop_detection.go)
+-   [Loop Detection](02-linked-lists/08-loop_detection.go) :white_check_mark:
 
 ## Chapter 03: Stacks and Queues
 
