@@ -17,10 +17,10 @@ func partition(l *LinkedList, p int) {
 	left, right := &LinkedList{}, &LinkedList{}
 	rootL, rootR := left, right
 	for l != nil {
-		if l.Val.(int) >= p { // link item to the right partation
+		if l.Val.(int) >= p { // link item to the right partition
 			right.Next = l
 			right = right.Next
-		} else { // link item to the left partation
+		} else { // link item to the left partition
 			left.Next = l
 			left = left.Next
 		}
@@ -28,7 +28,7 @@ func partition(l *LinkedList, p int) {
 	}
 	// unlink the last item to avoid circular linked list
 	right.Next = nil
-	// link left and right partation
+	// link left and right partition
 	left.Next = rootR.Next
 	l = rootL.Next
 }

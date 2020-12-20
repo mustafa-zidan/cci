@@ -19,7 +19,7 @@ func TestThreeInOne(t *testing.T) {
 
 func (suite *ThreeInOneSuite) TestThreeInOne() {
 	multiStack := NewMultiPartitionStack(3)
-	first, second, third := StackPartation(1), StackPartation(2), StackPartation(3)
+	first, second, third := StackPartition(1), StackPartition(2), StackPartition(3)
 
 	multiStack.Push(1, first)
 	multiStack.Push(2, first)
