@@ -47,7 +47,7 @@ Crack the coding interview problems solved in go.
 
 ## Chapter 03: Stacks and Queues
 
-- [Three in One](03-stacks-and-queues/01-three_in_one.go) :negative_squared_cross_mark:
+- [Three in One](03-stacks-and-queues/01-three_in_one.go) :white_check_mark:
 - [Stack Min](03-stacks-and-queues/02-stack_min.go)
 - [Stack of Plates](03-stacks-and-queues/03-stack_of_plates.go)
 - [Queue bia Stacks](03-stacks-and-queues/04-queue_via_stack.go)
