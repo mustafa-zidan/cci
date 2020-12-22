@@ -49,8 +49,8 @@ Crack the coding interview problems solved in go.
 
 - [Three in One](03-stacks-and-queues/01-three_in_one.go) :white_check_mark:
 - [Stack Min](03-stacks-and-queues/02-stack_min.go)
-- [Stack of Plates](03-stacks-and-queues/03-stack_of_plates.go)
-- [Queue bia Stacks](03-stacks-and-queues/04-queue_via_stack.go)
+- [Stack of Plates](03-stacks-and-queues/03-stack_of_plates.go) :white_check_mark:
+- [Queue via Stacks](03-stacks-and-queues/04-queue_via_stack.go)
 - [Sort Stack](03-stacks-and-queues/05-sort_stack.go)
 - [Animal Shelter](03-stacks-and-queues/06-animal_shelter.go)
 

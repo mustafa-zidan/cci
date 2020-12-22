@@ -88,5 +88,6 @@ func (mps *MultiPartitionStack) Pop(partition StackPartition) interface{} {
 	item := mps.items[partitionPointer]
 	mps.items[partitionPointer] = nil
 	mps.partitions[partition]--
+	// TODO resize down if the pointer is hitting 1/4 partation cap
 	return item
 }
