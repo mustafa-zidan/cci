@@ -54,25 +54,32 @@ func (swc *StackWithCap) Push(item interface{}) error {
 	return nil
 }
 
-func (swc *StackWithCap) Pop() (error, interface{}) {
+func (swc *StackWithCap) Pop() interface{} {
 	swc.lock.Lock()
 	defer swc.lock.Unlock()
 	if swc.index == -1 {
-		return errors.New("the stack is currently empty"), nil
+		return nil
 	}
 	item := swc.items[swc.index]
 	swc.items[swc.index] = nil
 	swc.index--
-	return nil, item
+	return item
 }
 
 func (swc *StackWithCap) PopAt(index int) interface{} {
-	// check if internal index pointer is larger than the index else return nil
-	// pop and remove item from internal array
+	// check if internal index pointer is larger
+	// than the index else return nil pop and remove
+	// item from internal array
+	swc.lock.Lock()
+	defer swc.lock.Unlock()
 	item := swc.items[index]
 	swc.items = append(swc.items[:index+1], append(swc.items[index+1:], nil)...)
 	swc.index--
 	return item
+}
+
+func (swc *StackWithCap) isEmpty() bool {
+	return swc.index == -1
 }
 
 func NewSetOfStacks(cap StackCapacity) *SetOfStacks {
@@ -93,15 +100,15 @@ func (sos *SetOfStacks) Push(item interface{}) {
 }
 
 func (sos *SetOfStacks) Pop() interface{} {
-	// pop from the latest stack
-	err, item := sos.current.Pop()
-	if err != nil {
-		// TODO: check if this is the first one return nil
-		// else remove from the set of stack
-		sos.current = sos.stacks[len(sos.stacks)-2]
+	// Pop from the latest stack
+	// if the current is empty and we still have
+	// remove the current stack from the list and
+	// set current to the latest from the list
+	if sos.current.isEmpty() && len(sos.stacks) > 1 {
 		sos.stacks = sos.stacks[:len(sos.stacks)-1]
-		err, item = sos.current.Pop()
+		sos.current = sos.stacks[len(sos.stacks)-1]
 	}
+	item := sos.current.Pop()
 	return item
 }
 

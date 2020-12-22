@@ -48,5 +48,11 @@ func (suite *SetOfStacksSuite) TestSetOfStacks() {
 		sos.Push(i)
 	}
 	assert.Equal(suite.T(), sos.PopAt(3), 6)
+	assert.Equal(suite.T(), sos.Pop(), 9)
 
+	// test Pop the stack all empty
+	for i := 0; i < 5; i++ {
+		sos.Pop()
+	}
+	assert.Nil(suite.T(), sos.Pop())
 }
