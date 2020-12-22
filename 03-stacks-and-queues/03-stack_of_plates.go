@@ -73,13 +73,13 @@ func (swc *StackWithCap) PopAt(index int) interface{} {
 	swc.lock.Lock()
 	defer swc.lock.Unlock()
 	item := swc.items[index]
-	swc.items = append(swc.items[:index+1], append(swc.items[index+1:], nil)...)
+	swc.items = append(swc.items[:index], append(swc.items[index+1:], nil)...)
 	swc.index--
 	return item
 }
 
 func (swc *StackWithCap) isEmpty() bool {
-	return swc.index == -1
+	return swc.index <= -1
 }
 
 func NewSetOfStacks(cap StackCapacity) *SetOfStacks {
@@ -117,5 +117,11 @@ func (sos *SetOfStacks) PopAt(index int) interface{} {
 	stackIndex := index / int(sos.maxCap)
 	// use stack internal popAt
 	item := sos.stacks[stackIndex].PopAt(index % int(sos.maxCap))
+	// we need to shift all the preceeding stacks by one
+	for s := stackIndex; s < len(sos.stacks)-1; s++ {
+		sos.stacks[s].items[sos.maxCap-1] = sos.stacks[s+1].items[0]
+		sos.stacks[s+1].items = append(sos.stacks[s+1].items[1:], nil)
+	}
+	sos.current.index--
 	return item
 }
