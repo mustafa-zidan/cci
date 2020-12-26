@@ -55,4 +55,8 @@ func (suite *SetOfStacksSuite) TestSetOfStacks() {
 		sos.Pop()
 	}
 	assert.Nil(suite.T(), sos.Pop())
+	assert.Equal(suite.T(), len(sos.stacks), 1)
+	assert.Equal(suite.T(), sos.current.index, -1)
+	assert.Equal(suite.T(), cap(sos.current.items), 2)
+
 }
