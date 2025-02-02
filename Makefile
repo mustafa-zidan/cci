@@ -7,22 +7,18 @@ help:           ## Show this help.
 
 run:
 	@echo "Compiling version ${VERSION}... "
-	@go run -ldflags "-X main.version=`cat VERSION`" `ls *.go | grep -v _test.go` -i=$(i) -o=$(o)
+	@go run -o cci `ls *.go | grep -v _test.go` -i=$(i) -o=$(o)
 
 test:           ## Run tests, except integration tests
-	@go test -cover ${RACE} ${PACKAGES}
+	@go test ${RACE} ${PACKAGES}
 
 benchmark:      ## Run benchmark tests
 	@go test --bench=^Benchmark.*$$ -benchmem -benchtime 10000000x ${PACKAGES}
 
-deps:           ## Install Neccessary Deps for bulding the repos
-	@go get -u github.com/mitchellh/gox
-
 build:          ## Build package for multiple OSs
 	@echo "Compiling version ${VERSION}... "
 	@mkdir -p ./bin
-	@gox -output "bin/{{.Dir}}_${VERSION}_{{.OS}}_{{.Arch}}" -os="linux" -os="darwin" -arch="386" -arch="amd64" ./
-	@go build -i -o ./bin/cci
+	@go build -o cci `ls *.go | grep -v _test.go` -i=$(i) -o=$(o)
 	@echo "All done! The binaries are in ./bin Check it out!"
 
 vet:            ## Run go vet
