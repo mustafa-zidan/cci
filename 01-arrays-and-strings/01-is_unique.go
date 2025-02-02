@@ -25,10 +25,10 @@ func isUniqueAlternativeImplementation(str string) bool {
 }
 
 // checker is acting like a map of bits starts with
-// 00000...000 then when it is anded with anything it
-// result zero and then we push one in it's unique place
+// 00000...000 then when it is ANDed with anything it
+// results zero, and then we push one in its unique place
 // in the bit map so if there "abcfgh" will translate to
-// 111011100... when this value is anded with any value
+// 111011100... when this value is ANDed with any value
 // that has a unique letter e.g, "d" it results 0 which
 // means this number is unique
 // Space Complexity O(1), Runtime Complexity O(128) - ASCII limit
