@@ -1,38 +1,34 @@
 package arrays
 
-import "math"
-
 // One Away: there are three types of edits that can be preformed on strings,
 // insert a character, remove a character or replace a character. Given two
 // strings, write a function to check if they are one edit (or zero edits) away
 // example:
-// pale,  ple -> true
+// pale,  ple  -> true
 // pales, pale -> true
 // pale,  bale -> true
 // pale,  bake -> true
 
 func oneAway(src, target string) bool {
-	if math.Abs(float64(len(src)-len(target))) > 1 {
+	if len(src) > len(target) {
+		// swap if necessary now we are sure src is always smaller than target
+		src, target = target, src
+	}
+	if len(target)-len(src) > 1 {
 		return false
-	} // sanity check before we start
+	} // perform sanity check before we start
 	for i := 0; i < len(src) && i < len(target); i++ {
 		if src[i] != target[i] {
-			return isRemovedCharacter(src, target, i) ||
-				isReplacedCharacter(src, target, i) ||
-				isAddedCharacter(src, target, i)
+			return i+1 < len(src) && (isRemovedCharacter(src, target, i) || isReplacedCharacter(src, target, i))
 		}
 	}
 	return true
 }
 
 func isRemovedCharacter(src, target string, i int) bool {
-	return i+1 < len(src) && i < len(target) && src[i+1:] == target[i:]
+	return src[i:] == target[i+1:]
 }
 
 func isReplacedCharacter(src, target string, i int) bool {
-	return i+1 < len(src) && i+1 < len(target) && src[i+1:] == target[i+1:]
-}
-
-func isAddedCharacter(src, target string, i int) bool {
-	return i < len(src) && i+1 < len(target) && src[i:] == target[i+1:]
+	return src[i+1:] == target[i+1:]
 }
