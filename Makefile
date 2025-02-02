@@ -1,25 +1,31 @@
+# Variables
 PACKAGES := $(shell go list ./...)
-RACE := $(shell test $$(go env GOARCH) != "amd64" || (echo "-race"))
-VERSION := $(shell cat VERSION)
+SOURCES  := $(shell ls *.go | grep -v _test.go)
+RACE     := $(shell test $$(go env GOARCH) != "amd64" || echo "-race")
+VERSION  := $(shell cat VERSION)
 
-help:           ## Show this help.
-	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'
+.PHONY: help run test benchmark build vet
 
-run:
-	@echo "Compiling version ${VERSION}... "
-	@go run -o cci `ls *.go | grep -v _test.go` -i=$(i) -o=$(o)
+help: ## Show this help.
+	@echo "Available targets:"
+	@awk 'BEGIN {FS = ":.*?## "}; /^[a-zA-Z_-]+:.*?## / {printf "  %-12s %s\n", $$1, $$2}' $(MAKEFILE_LIST)
 
-test:           ## Run tests, except integration tests
-	@go test ${RACE} ${PACKAGES}
+run: ## Run the application.
+	@echo "Compiling version $(VERSION)..."
+	@go run -o cci $(SOURCES) -i=$(i) -o=$(o)
 
-benchmark:      ## Run benchmark tests
-	@go test --bench=^Benchmark.*$$ -benchmem -benchtime 10000000x ${PACKAGES}
+test: ## Run tests (excluding integration tests).
+	@go test $(RACE) $(PACKAGES)
 
-build:          ## Build package for multiple OSs
-	@echo "Compiling version ${VERSION}... "
-	@mkdir -p ./bin
-	@go build -o cci `ls *.go | grep -v _test.go` -i=$(i) -o=$(o)
-	@echo "All done! The binaries are in ./bin Check it out!"
+benchmark: ## Run benchmark tests.
+	@go test --bench=^Benchmark.*$$ -benchmem -benchtime=10000000x $(PACKAGES)
 
-vet:            ## Run go vet
-	@test -z "$$(go vet ${PACKAGES} 2>&1 | grep -v '*composite literal uses unkeyed fields|exit status 0)' | tee /dev/stderr)"
+build: ## Build the application.
+	@echo "Compiling version $(VERSION)..."
+	@mkdir -p bin
+	@go build -o bin/cci $(SOURCES) -i=$(i) -o=$(o)
+	@echo "All done! The binaries are in ./bin. Check it out!"
+
+vet: ## Run go vet.
+	@echo "Running go vet..."
+	@test -z "$$(go vet $(PACKAGES) 2>&1 | grep -v 'composite literal uses unkeyed fields' | tee /dev/stderr)" || (echo "go vet found issues!" && exit 1)
